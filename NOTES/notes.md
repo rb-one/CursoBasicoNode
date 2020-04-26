@@ -1,12 +1,19 @@
 #Curso de Fundamentos de Node JS
-- [01 Node: orígenes y filosofía](#01-node-or%c3%adgenes-y-filosof%c3%ada)
-- [02 EventLoop: asíncrona por diseño](#02-eventloop-as%c3%adncrona-por-dise%c3%b1o)
-- [03 Monohilo: implicaciones en diseño y seguridad](#03-monohilo-implicaciones-en-dise%c3%b1o-y-seguridad)
-- [04 Variables de entorno](#04-variables-de-entorno)
-- [05 Herramientas para ser más felices: Nodemon y PM2](#05-herramientas-para-ser-m%c3%a1s-felices-nodemon-y-pm2)
+- [- 09 Promesas](#ul-li09-promesasli-ul)
+    - [01 Node: orígenes y filosofía](#01-node-or%c3%adgenes-y-filosof%c3%ada)
+    - [02 EventLoop: asíncrona por diseño](#02-eventloop-as%c3%adncrona-por-dise%c3%b1o)
+    - [03 Monohilo: implicaciones en diseño y seguridad](#03-monohilo-implicaciones-en-dise%c3%b1o-y-seguridad)
+    - [04 Variables de entorno](#04-variables-de-entorno)
+    - [05 Herramientas para ser más felices: Nodemon y PM2](#05-herramientas-para-ser-m%c3%a1s-felices-nodemon-y-pm2)
+    - [07 Callbacks](#07-callbacks)
+    - [08 Callback Hell: refactorizar o sufrir](#08-callback-hell-refactorizar-o-sufrir)
+    - [09 Promesas](#09-promesas)
+<<<<<<< HEAD
 - [07 Callbacks](#07-callbacks)
 - [08 Callback Hell: refactorizar o sufrir](#08-callback-hell-refactorizar-o-sufrir)
 - [09 Promesas](#09-promesas)
+=======
+>>>>>>> 507d79c2a17f58712876dab820104e6387f3bb0d
 
 
 ### 01 Node: orígenes y filosofía
