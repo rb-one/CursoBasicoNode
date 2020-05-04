@@ -1,0 +1,1 @@
+print('hola mundo python invocado desde node')
