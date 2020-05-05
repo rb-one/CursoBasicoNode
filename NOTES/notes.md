@@ -12,6 +12,9 @@
 - [Utilizar los módulos y paquetes externos](#utilizar-los-m%c3%b3dulos-y-paquetes-externos)
   - [20 Utilizar los módulos y paquetes externos](#20-utilizar-los-m%c3%b3dulos-y-paquetes-externos)
   - [21 Construyendo modulos: Require e Import](#21-construyendo-modulos-require-e-import)
+  - [22 Modulos Útiles](#22-modulos-%c3%9atiles)
+  - [23 Datos almacenados vs en memoria](#23-datos-almacenados-vs-en-memoria)
+  - [24 Buffers](#24-buffers)
 
 
 ### 01 Node: orígenes y filosofía
@@ -828,3 +831,119 @@ Corremos desde la terminal
 ```
 nodemon --experimental-modules modulo/es6/index.mjs
 ```
+
+
+### 22 Modulos Útiles
+
+**Bcrypt** paquete de criptografía
+
+```
+const bcrypt = require('bcrypt');
+
+const password = '1234Segura!'
+
+bcrypt.hash(password, 5, function(err, hash) {
+    console.log(hash);
+
+    bcrypt.compare(password, hash, function(err, res) {
+        console.log(res);
+    })
+})
+```
+
+**moment** librería para el manejo de fechas
+```
+const moment = require('moment');
+
+
+let ahora = moment()
+
+
+// console.log(ahora.toString());
+console.log(ahora.format('YYYY/MM/DD - HH:mm'));
+```
+
+
+**sharp** librería para el manejo de imágenes
+const sharp = require('sharp');
+
+
+sharp('original.png')
+    .resize(80)
+    .grayscale()
+    .toFile('resized.png')
+
+
+### 23 Datos almacenados vs en memoria
+
+Referencia: Los datos almacenados en disco son datos lentos, los procesos rápidos requieren de que la información sea guardada en memoria (ram).
+
+Un buffer son un montón de datos.
+
+Un Stream es un proceso con ese montón de datos.
+
+
+### 24 Buffers
+
+**Buffer:** Son datos en binario en un formato crudo (raw) que se van moviendo de un lado para otro.
+
+```
+let buffer = Buffer.alloc(4);
+
+console.log(buffer);
+``` 
+
+Muestra en consola un buffer con 4 espacios vacíos
+
+```
+<Buffer 00 00 00 00>
+```
+
+Guardando espacios en nuestro buffer con un array
+
+```
+let buffer = Buffer.from([1,2,5]);
+
+console.log(buffer);
+
+```
+
+Resultado
+
+```
+let buffer = Buffer.from([1,2,5]);
+
+console.log(buffer);
+
+```
+
+Convirtiendo un string a tipo buffer
+```
+let buffer = Buffer.from('Hola mundo');
+
+console.log(buffer);
+console.log(buffer.toString());
+```
+Resultado
+
+```
+<Buffer 48 6f 6c 61 20 6d 75 6e 64 6f>
+Hola mundo
+```
+
+Trabajar con buffers nos permite trabajar con el dato en su version mas crud, son tipos de datos que vienen y van de forma rápida, quien los manda y quien los recibe deben saber que tipo de dato es.
+
+Otra opción de trabajo con buffers es posición a posición, ejemplo un abecedario.
+```
+let abc = Buffer.alloc(26);
+console.log(abc);
+
+for (let i=0; i < 26; i++) {
+    abc[i] = i + 97
+}
+
+console.log(abc);
+console.log(abc.toString());
+```
+Lectura adicional en la documentación oficial de node.
+https://nodejs.org/en/knowledge/advanced/buffers/how-to-use-buffers/

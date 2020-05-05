@@ -1,0 +1,4 @@
+.vscode
+node_module
+paquetes/npm/node_modules
+paquetes/paquete/utiles/node_modules
